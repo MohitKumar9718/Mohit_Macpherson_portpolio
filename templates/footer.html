@@ -1,0 +1,55 @@
+<!-- Enhanced Footer -->
+<footer class="bg-black text-white pt-12">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+            <!-- Branding -->
+            <div>
+                <h3 class="text-2xl font-bold text-blue-500 mb-4">Mohit's Portfolio</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Crafting beautiful and performant web applications with Django and Tailwind CSS.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-xl font-semibold text-blue-400 mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="{% url 'home' %}" class="hover:text-white transition">Home</a></li>
+                    <li><a href="{% url 'projects' %}" class="hover:text-white transition">Projects</a></li>
+                    <li><a href="{% url 'about' %}" class="hover:text-white transition">About</a></li>
+                    <li><a href="{% url 'signup' %}" class="hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h4 class="text-xl font-semibold text-blue-400 mb-4">Newsletter</h4>
+                <p class="text-gray-400 mb-3">Get updates and portfolio tips in your inbox.</p>
+                <form action="#" method="POST" class="flex flex-col space-y-3">
+                    <input type="email" placeholder="Your Email" class="px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 transition text-white px-4 py-2 rounded">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Connect -->
+            <div>
+                <h4 class="text-xl font-semibold text-blue-400 mb-4">Connect</h4>
+                <p class="text-gray-400 mb-3">Follow me on socials:</p>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/MohitKumar9718" class="text-gray-400 hover:text-white transition"><i class="fab fa-github text-2xl"></i></a>
+                    <a href="https://www.linkedin.com/in/mohit-kumar-9718mahi/" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin text-2xl"></i></a>
+                    <a href="https://x.com/Mohitkumar9718?t=zkJyNXM8HoUv1VLnNo-XGQ&s=08" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="https://www.instagram.com/mohitmacpherson3.0?igsh=bW5nZHRuMDkybDI2" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
+            &copy; 2025 Mohit Kumar. All rights reserved.
+        </div>
+    </div>
+</footer>
+</body>
+</html>

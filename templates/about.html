@@ -1,0 +1,223 @@
+{% load static %}
+
+{% include "header.html" %}
+
+<!-- About Hero -->
+<!-- About Me Hero - Typing Forward & Backward -->
+<section class="py-24 bg-white text-center text-gray-800">
+  <div class="max-w-4xl mx-auto px-6">
+    <h1 id="typed-heading" class="text-5xl md:text-6xl font-bold mb-6 h-16 text-indigo-600"></h1>
+    <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed text-gray-600">
+      Hey , this is<span class='text-pink-600'> Mohit Macpherson </span> From Ambedkarnagar Uttar Pradesh.
+      I am FullStack Web Developer. 
+        digital experiences with clean code, creative design, and a passion for innovation.
+    </p>
+  </div>
+
+  <!-- Typing & Backspacing Script -->
+  <script>
+    const text = " About Me";
+    const heading = document.getElementById("typed-heading");
+    let index = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      if (!isDeleting) {
+        heading.innerHTML = text.substring(0, index + 1);
+        index++;
+        if (index === text.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1000); // pause before deleting
+          return;
+        }
+      } else {
+        heading.innerHTML = text.substring(0, index - 1);
+        index--;
+        if (index === 0) {
+          isDeleting = false;
+        }
+      }
+      setTimeout(typeEffect, isDeleting ? 50 : 100); // adjust speed
+    }
+
+    window.addEventListener("load", typeEffect);
+  </script>
+</section>
+
+
+
+<!-- About Content -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+            <img src="{% static 'image/myphoto.jpg' %}" alt="Mohit" class="rounded-full shadow-xl w-80 h-80 m-10 object-cover">
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Hey, I'm <span class='text-green-800 '>MOHIT</span> </h2>
+            <p class="text-gray-600 mb-4 leading-relaxed">I'm a full-stack developer with a passion for building modern, user-friendly websites and applications. I specialize in Python, Django, and front-end frameworks like Tailwind CSS.</p>
+            <p class="text-gray-600 mb-4 leading-relaxed">With 3+ years of experience, I’ve helped startups and businesses bring their ideas to life through efficient, scalable, and elegant code.</p>
+            <a href="{% url 'projects' %}" class="inline-block mt-6 bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition">See My Work</a>
+        </div>
+    </div>
+</section>
+
+<!-- Skills -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-10 text-gray-800">My Skills</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {% comment %} Skill Item {% endcomment %}
+            <div class="relative w-40 h-40 mx-auto rounded-full border-8 border-indigo-500 flex items-center justify-center shadow-lg bg-white">
+                <div class="text-center">
+                    <i class="fab fa-html5 text-5xl text-orange-500"></i>
+                    <p class="mt-2 font-semibold">HTML/CSS</p>
+                    <p class="text-sm text-gray-500">95%</p>
+                </div>
+            </div>
+
+            <div class="relative w-40 h-40 mx-auto rounded-full border-8 border-yellow-400 flex items-center justify-center shadow-lg bg-white">
+                <div class="text-center">
+                    <i class="fab fa-js text-5xl text-yellow-500"></i>
+                    <p class="mt-2 font-semibold">JavaScript</p>
+                    <p class="text-sm text-gray-500">85%</p>
+                </div>
+            </div>
+
+            <div class="relative w-40 h-40 mx-auto rounded-full border-8 border-green-500 flex items-center justify-center shadow-lg bg-white">
+                <div class="text-center">
+                    <i class="fab fa-python text-5xl text-green-500"></i>
+                    <p class="mt-2 font-semibold">Python</p>
+                    <p class="text-sm text-gray-500">90%</p>
+                </div>
+            </div>
+
+            <div class="relative w-40 h-40 mx-auto rounded-full border-8 border-purple-500 flex items-center justify-center shadow-lg bg-white">
+                <div class="text-center">
+                    <i class="fas fa-database text-5xl text-purple-500"></i>
+                    <p class="mt-2 font-semibold">Django</p>
+                    <p class="text-sm text-gray-500">90%</p>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="relative w-40 h-40 mx-auto rounded-full border-8 border-pink-500 flex items-center justify-center shadow-lg bg-white">
+                <div class="text-center">
+                    <i class="fas fa-pencil-ruler text-5xl text-pink-500"></i>
+                    <p class="mt-2 font-semibold">UI/UX</p>
+                    <p class="text-sm text-gray-500">80%</p>
+                </div>
+            </div>
+
+            <div class="relative w-40 h-40 mx-auto rounded-full border-8 border-blue-400 flex items-center justify-center shadow-lg bg-white">
+                <div class="text-center">
+                    <i class="fab fa-react text-5xl text-blue-400"></i>
+                    <p class="mt-2 font-semibold">React</p>
+                    <p class="text-sm text-gray-500">75%</p>
+                </div>
+            </div>
+
+            <div class="relative w-40 h-40 mx-auto rounded-full border-8 border-red-400 flex items-center justify-center shadow-lg bg-white">
+                <div class="text-center">
+                    <i class="fas fa-code text-5xl text-red-400"></i>
+                    <p class="mt-2 font-semibold">REST APIs</p>
+                    <p class="text-sm text-gray-500">85%</p>
+                </div>
+            </div>
+
+            <div class="relative w-40 h-40 mx-auto rounded-full border-8 border-gray-500 flex items-center justify-center shadow-lg bg-white">
+                <div class="text-center">
+                    <i class="fas fa-tools text-5xl text-gray-500"></i>
+                    <p class="mt-2 font-semibold">Dev Tools</p>
+                    <p class="text-sm text-gray-500">80%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What Clients Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Single Testimonial -->
+            <div class="bg-gray-50 p-8 rounded-xl shadow">
+                <div class="flex items-center mb-4">
+                    <img src=" {% static 'image/modi.webp' %}" alt="Client" class="rounded-full h-20 w-20 mr-4">
+                    <div>
+                        <h4 class="font-semibold">MODI</h4>
+                        <p class="text-sm text-gray-500">PM, India.</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">"Mohit created a powerful web platform for our team. It exceeded expectations!"</p>
+                <div class="flex mt-4 text-yellow-400">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl shadow">
+                <div class="flex items-center mb-4">
+                    <img src="{% static 'image/yogi.webp' %}" alt="Client" class="rounded-full h-20 w-20 mr-4">
+                    <div>
+                        <h4 class="font-semibold">YOGI</h4>
+                        <p class="text-sm text-gray-500">CM,UP</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">"He’s super responsive and understands business goals along with design."</p>
+                <div class="flex mt-4 text-yellow-400">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-xl shadow">
+                <div class="flex items-center mb-4">
+                    <img src=" {% static 'image/rahul.webp' %}" alt="Client" class="rounded-full h-20 w-20 mr-4">
+                    <div>
+                        <h4 class="font-semibold">RAHUL GANDHI</h4>
+                        <p class="text-sm text-gray-500">LOP,India</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">"He transformed our ideas into an intuitive and modern product."</p>
+                <div class="flex mt-4 text-yellow-400">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Let's Connect</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <form action="#" method="POST" class="space-y-6 bg-white p-8 rounded-xl shadow">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Your Name" name="name" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500">
+                    <input type="email" placeholder="Your Email" name="email" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500">
+                    <textarea rows="5" placeholder="Your Message" name="message" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500"></textarea>
+                    <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition">Send Message</button>
+                </form>
+                <br>
+                <br>
+                <h1>Social Media</h1>
+                <div class="mt-6 flex space-x-4 text-gray-600 text-xl">
+                    <a href="https://github.com/MohitKumar9718" class="hover:text-indigo-600"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mohit-kumar-9718mahi/" class="hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/Mohitkumar9718?t=zkJyNXM8HoUv1VLnNo-XGQ&s=08" class="hover:text-indigo-600"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/mohitmacpherson3.0?igsh=bW5nZHRuMDkybDI2" class="hover:text-indigo-600"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <iframe class="rounded-xl w-full h-80 shadow-lg"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1722.0634167472058!2d82.7912042945671!3d26.319523582859865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3990f9002867c7ed%3A0x53a0cbc830c805e9!2sMathurapur%20Ambedkar%20Nagar!5e1!3m2!1sen!2sin!4v1753422434981!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade "></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+ 
+
+
+{% include "footer.html" %}
