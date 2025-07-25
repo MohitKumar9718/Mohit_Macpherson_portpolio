@@ -17,7 +17,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings
 SECRET_KEY = config('SECRET_KEY')
 DEBUG =  config('DEBUG', default=False, cast=bool)
-ALLOWED_HOSTS = ['myapp.onrender.com', 'localhost', '127.0.0.1']
+
+
+ALLOWED_HOSTS = ['mohit-macpherson-portpolio-7.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://myapp.onrender.com']
 
